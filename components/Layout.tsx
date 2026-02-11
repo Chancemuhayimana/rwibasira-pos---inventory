@@ -135,7 +135,7 @@ const Layout: React.FC<LayoutProps> = ({ children, activeView, setView, onLogout
       </div>
 
       {/* Main Content Area */}
-      <main className="flex-1 flex min-w-0 flex-col overflow-hidden">
+      <main className="flex-1 flex min-w-0 flex-col overflow-visible md:overflow-hidden">
         <header className="h-14 sm:h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 sm:px-6 lg:px-8 z-10">
           <div className="flex items-center gap-3 min-w-0">
             <button
@@ -160,7 +160,7 @@ const Layout: React.FC<LayoutProps> = ({ children, activeView, setView, onLogout
           </div>
         </header>
         
-        <div className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
+        <div className="flex-1 overflow-visible md:overflow-y-auto p-4 sm:p-6 lg:p-8">
           {children}
         </div>
       </main>
