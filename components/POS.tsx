@@ -93,9 +93,9 @@ const POS: React.FC = () => {
   );
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 h-[calc(100vh-10rem)]">
+    <div className="grid grid-cols-1 xl:grid-cols-12 gap-4 sm:gap-6 lg:gap-8 h-auto xl:h-[calc(100vh-10rem)]">
       {/* Product Selection */}
-      <div className="lg:col-span-7 flex flex-col h-full space-y-4">
+      <div className="xl:col-span-7 flex flex-col xl:h-full space-y-4">
         <div className="relative">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
           <input 
@@ -107,7 +107,7 @@ const POS: React.FC = () => {
           />
         </div>
         
-        <div className="flex-1 overflow-y-auto pr-2 grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="flex-1 overflow-y-auto pr-1 sm:pr-2 grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 max-h-[50vh] xl:max-h-none">
           {filteredProducts.map(p => (
             <button 
               key={p.id}
@@ -139,8 +139,8 @@ const POS: React.FC = () => {
       </div>
 
       {/* Cart / Checkout */}
-      <div className="lg:col-span-5 flex flex-col h-full bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
-        <div className="p-6 border-b border-slate-100 flex items-center justify-between">
+      <div className="xl:col-span-5 flex flex-col xl:h-full bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
+        <div className="p-4 sm:p-6 border-b border-slate-100 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <ShoppingCart className="w-6 h-6 text-red-600" />
             <h3 className="font-bold text-lg text-slate-800">Current Order</h3>
@@ -150,7 +150,7 @@ const POS: React.FC = () => {
           </span>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-6 space-y-4">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 max-h-[45vh] xl:max-h-none">
           {cart.length === 0 ? (
             <div className="h-full flex flex-col items-center justify-center text-slate-400 space-y-3">
               <div className="p-6 bg-slate-50 rounded-full">
@@ -193,7 +193,7 @@ const POS: React.FC = () => {
           )}
         </div>
 
-        <div className="p-6 bg-slate-50 border-t border-slate-200 space-y-4">
+        <div className="p-4 sm:p-6 bg-slate-50 border-t border-slate-200 space-y-4">
           <div className="flex items-center justify-between text-slate-500">
             <span>Subtotal</span>
             <span>K {total.toFixed(2)}</span>

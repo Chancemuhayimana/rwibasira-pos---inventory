@@ -34,7 +34,7 @@ const App: React.FC = () => {
 
   if (!isLoggedIn) {
     return (
-      <div className="min-h-screen bg-slate-950 flex items-center justify-center p-6">
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center p-4 sm:p-6">
         <div className="max-w-md w-full relative">
           <div className="absolute -top-20 -left-20 w-64 h-64 bg-red-600/20 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-red-600/10 rounded-full blur-3xl"></div>
@@ -45,14 +45,14 @@ const App: React.FC = () => {
                 (e.target as HTMLImageElement).src = 'https://placehold.co/200x200?text=R';
               }} />
             </div>
-            <h1 className="text-4xl font-black text-white tracking-tight">Rwibasira</h1>
-            <p className="text-slate-400 mt-3 text-lg font-medium italic">Efficiency in every transaction.</p>
+            <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight">Rwibasira</h1>
+            <p className="text-slate-400 mt-3 text-base sm:text-lg font-medium italic">Efficiency in every transaction.</p>
           </div>
           
-          <div className="bg-white rounded-[2.5rem] p-10 shadow-2xl relative z-10 border border-slate-100">
+          <div className="bg-white rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-10 shadow-2xl relative z-10 border border-slate-100">
             <div className="flex items-center gap-3 mb-8">
               <ShieldCheck className="w-6 h-6 text-red-600" />
-              <h2 className="text-xl font-bold text-slate-800">Branch Management</h2>
+              <h2 className="text-lg sm:text-xl font-bold text-slate-800">Branch Management</h2>
             </div>
             
             <form onSubmit={handleLogin} className="space-y-6">
@@ -65,7 +65,7 @@ const App: React.FC = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter security key..."
-                    className={`w-full pl-12 pr-4 py-4 bg-slate-50 border ${loginError ? 'border-red-300 ring-4 ring-red-500/10' : 'border-slate-200'} rounded-2xl focus:outline-none focus:ring-4 focus:ring-red-500/10 focus:border-red-500 transition-all text-lg`}
+                    className={`w-full pl-12 pr-4 py-3.5 sm:py-4 bg-slate-50 border ${loginError ? 'border-red-300 ring-4 ring-red-500/10' : 'border-slate-200'} rounded-2xl focus:outline-none focus:ring-4 focus:ring-red-500/10 focus:border-red-500 transition-all text-base sm:text-lg`}
                   />
                 </div>
                 {loginError && <p className="text-red-500 text-sm font-bold mt-2 ml-1 animate-pulse">Access code incorrect. (Try 'admin')</p>}
@@ -73,7 +73,7 @@ const App: React.FC = () => {
               
               <button 
                 type="submit" 
-                className="w-full bg-red-600 hover:bg-red-700 text-white font-black py-4 rounded-2xl shadow-xl shadow-red-200 transition-all transform active:scale-[0.98] text-lg uppercase tracking-widest"
+                className="w-full bg-red-600 hover:bg-red-700 text-white font-black py-3.5 sm:py-4 rounded-2xl shadow-xl shadow-red-200 transition-all transform active:scale-[0.98] text-base sm:text-lg uppercase tracking-widest"
               >
                 Access System
               </button>
@@ -95,13 +95,13 @@ const App: React.FC = () => {
       case 'pos': return <POS />;
       case 'reports': return <Reports />;
       case 'settings': return (
-        <div className="bg-white p-12 rounded-3xl border border-slate-200 shadow-sm text-center">
+        <div className="bg-white p-6 sm:p-8 lg:p-12 rounded-3xl border border-slate-200 shadow-sm text-center">
           <div className="bg-red-50 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6">
             <ShieldCheck className="w-12 h-12 text-red-600" />
           </div>
-          <h3 className="text-2xl font-bold text-slate-800">Rwibasira System Config</h3>
+          <h3 className="text-xl sm:text-2xl font-bold text-slate-800">Rwibasira System Config</h3>
           <p className="text-slate-500 mt-2 max-w-sm mx-auto">Zambian branch configuration active.</p>
-          <div className="mt-8 pt-8 border-t border-slate-100 grid grid-cols-2 gap-4">
+          <div className="mt-8 pt-8 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="p-4 bg-slate-50 rounded-2xl text-left">
               <p className="text-xs font-bold text-slate-400 uppercase">Currency</p>
               <p className="font-bold text-slate-800">Zambian Kwacha (K)</p>

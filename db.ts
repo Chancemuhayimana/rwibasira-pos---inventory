@@ -40,5 +40,23 @@ export const db = {
       }
     });
     db.saveProducts(products);
+  },
+  deleteSale: (saleId: string) => {
+    const sales = db.getSales();
+    const saleToDelete = sales.find(s => s.id === saleId);
+    if (!saleToDelete) return;
+
+    // Restore stock for the deleted sale items.
+    const products = db.getProducts();
+    saleToDelete.items.forEach(item => {
+      const product = products.find(p => p.id === item.productId);
+      if (product) {
+        product.quantity += item.quantity;
+      }
+    });
+    db.saveProducts(products);
+
+    const updatedSales = sales.filter(s => s.id !== saleId);
+    localStorage.setItem(SALES_KEY, JSON.stringify(updatedSales));
   }
 };

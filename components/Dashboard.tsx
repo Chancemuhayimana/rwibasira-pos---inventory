@@ -94,14 +94,14 @@ const Dashboard: React.FC = () => {
         />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
         {/* Sales Chart */}
-        <div className="lg:col-span-2 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-          <div className="flex items-center justify-between mb-6">
-            <h3 className="font-bold text-slate-800 text-lg">Sales & Profit Trends (K)</h3>
+        <div className="lg:col-span-2 bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-slate-200">
+          <div className="flex items-center justify-between gap-3 mb-6">
+            <h3 className="font-bold text-slate-800 text-base sm:text-lg">Sales & Profit Trends (K)</h3>
             <span className="text-xs font-medium px-2 py-1 bg-slate-100 text-slate-500 rounded">Last 7 Days</span>
           </div>
-          <div className="h-80 w-full">
+          <div className="h-64 sm:h-80 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={last7Days}>
                 <defs>
